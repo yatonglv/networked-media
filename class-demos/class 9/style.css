@@ -1,0 +1,15 @@
+body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+/* really good css for every webpage  */
+#text{
+    width:500px
+    height:500px
+    background-color: red;
+    margin:top 100px;
+    margin:left 200px;
+
+
+}
