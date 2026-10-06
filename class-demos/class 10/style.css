@@ -1,0 +1,41 @@
+/* multiple selector using ,  */
+html,body{
+    /* vw = viewport width */
+    width:100vw;
+    /* vh = viewport height */
+    height:100vh;
+
+    /* edge is 10 px all away around */
+    overflow: hidden;
+    margin:0
+    /* change calculation into vorder-box to include margin border, and padding */
+    box-sizing:border-box;
+}
+/* separate selector for just body */
+body{
+    padding:10px;
+  border:10px solid red 
+  /* actual way to make the screen bigger */
+
+  /* box sizing element  */
+}
+.parent{
+     background-color: orange;
+     position: relative;
+     z-index:1;
+
+}
+.child{
+    background-color: yellow;
+    position:absolute;
+    top:30px;
+
+    /* kind of like margin,position from the top of the relative
+     */
+    right:33%
+    /* z-index:-100; */
+}
+.child-2{
+    position:relative;
+    z-index:1:
+}
