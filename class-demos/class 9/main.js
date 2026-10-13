@@ -7,6 +7,7 @@ window.addEventListener("load",()=>{
     document.body.addEventListener("click",(e)=>{
         console.log('document.body was clicked')
         console.log(${e.clientX}, ${e.clientY})
+        // I have one question toward this console, is I type something wrong that it not shown in inspector
     
     })
     // using ids are good for js!
@@ -20,7 +21,7 @@ window.addEventListener("load",()=>{
         textDIv.textcontent += e.key
         // adding the key that was typed to the div on my page 
 
-        if(e.key == " "){
+        if(e.key == '  '){
             textDIv.textContent += ''
         }
 
