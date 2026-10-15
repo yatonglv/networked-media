@@ -38,7 +38,9 @@ app.listen(8080,()=>{
 })
 
 app.post('/form-upload', (request, response)=>{
-    // request.body 
+    // console.log in server js only shows up in the terminal because it is a different console than
+    // the on ine the browser
+    // request.body retrieve the data from the from 
     console.log(request.body)
     // send the client to a different route
     reponse.redirect('/')
