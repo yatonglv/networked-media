@@ -1,6 +1,14 @@
-form: send data via a post request to the server
-<form>
-    <input type="text" placeholder=" name" name="user">
+{# form: send data via a post request to the server #}
+{#  to send data to server we need attribute in the form  #}
+{# attribute :method ,action #}
+{# method: what type of http request are we making ? for forms always be POST #}
+
+<form method="POST" action="/send-message">
+    {# input are the data to be sent #}
+    {# in order to process the data, we meed to include the name attribute which will name the property in the request.body #}
+    <input type="text" placeholder=" write your name" name="user">
+    {# there are different input type #}
     <input type="text" placeholder="write a message" name="message">
+    {# always we sent to include a submit button #}
     <input type="submit " value="sent message">
 </form>

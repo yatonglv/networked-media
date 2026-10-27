@@ -1,0 +1,191 @@
+
+
+:root {
+    --cloth: #EEEFE9;
+    --cloth-2: #E3E5DD;
+    --ink: #26231F;
+    --muted: #6F6A61;
+    --label: #FBFAF6;
+    --mint: #CFE5D8;
+    --yarn: #8A6A55;
+    --pink: #EBC3CC;
+    --lilac: #DCD3E8;
+    --f-display: "Averia Libre", Georgia, serif;
+    --f-body: "Averia Libre", Georgia, serif;
+}
+
+/* page basic */
+body {
+    margin: 0;
+    background: var(--cloth);
+    color: var(--ink);
+    font-family: var(--f-body);
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+h1 {
+    font-family: var(--f-display);
+    font-weight: 400;
+    font-size: 56px;
+    margin: 0 0 12px;
+}
+
+.eyebrow {
+    font-size: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.lede {
+    width: 600px;
+    color: var(--muted);
+}
+
+/* bttn*/
+.bttn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 26px 8px 8px;
+    background: var(--ink);
+    color: var(--cloth);
+    border-radius: 999px;
+    text-decoration: none;
+}
+
+.bttn img {
+    width: 34px;
+    height: 34px;
+    transition: transform 0.45s;
+}
+
+.bttn:hover img {
+    transform: rotate(120deg);
+}
+
+.bttn.big {
+    padding: 12px 38px 12px 12px;
+    font-size: 20px;
+    background: var(--label);
+    color: var(--ink);
+    border: 3px solid var(--ink);
+    box-shadow: 4px 5px 0 var(--ink);
+}
+
+.bttn.big img {
+    width: 58px;
+    height: 58px;
+}
+
+
+.wrap {
+    width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* closet page*/
+.posts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-top: 24px;
+    padding: 20px;
+    background-image: url("/images/fabric/jacquard.webp");
+    background-size: 300px;
+}
+
+.post {
+    padding: 12px;
+    background-image: url("/images/fabric/lilac.webp");
+    background-size: cover;
+    box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.15);
+}
+
+.post img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border: 1px dashed var(--ink);
+}
+
+/* patch form */
+.patch-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 600px;
+    margin-top: 30px;
+}
+
+/* each label */
+.patch-form label,
+.form-label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 0;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.patch-form input[type="text"],
+.patch-form textarea {
+    font: inherit;
+    letter-spacing: 0;
+    text-transform: none;
+    padding: 10px 12px;
+    background: var(--label);
+    border: 0;
+    border-bottom: 1.5px dashed var(--ink);
+}
+
+.patch-form textarea {
+    min-height: 100px;
+}
+
+/* the six type choices in one row */
+.types {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.patch-form .type {
+    flex-direction: row;
+    align-items: center;
+    padding: 4px 14px 4px 6px;
+    background: var(--label);
+    border-radius: 999px;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+.type img {
+    width: 28px;
+}
+
+.patch-form .bttn {
+    align-self: flex-start;
+    border: 0;
+    font: inherit;
+    cursor: pointer;
+}
+/* under construction pages */
+.construction {
+    text-align: center;
+    padding: 80px 0;
+}
+
+.construction img {
+    width: 160px;
+    margin: 0 auto 20px;
+}

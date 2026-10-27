@@ -1,0 +1,163 @@
+
+.site-head {
+    position: relative;
+    height: 265px;
+}
+
+/* garland across the top */
+.edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+/* hanging labels */
+.tag {
+    position: absolute;
+    top: 1.8vw;
+    transform: translateX(-50%) rotate(var(--r));
+    transform-origin: top center;
+    transition: transform 0.4s;
+    z-index: 2;
+}
+
+/* the string */
+.tag::before {
+    content: "";
+    display: block;
+    width: 1.5px;
+    height: 62px;
+    margin: 0 auto;
+    background: var(--yarn);
+}
+
+.tag:hover {
+    transform: translateX(-50%) rotate(calc(var(--r) * -2));
+}
+
+/* the woven label */
+.tag .label {
+    display: block;
+    position: relative;
+    padding: 8px 20px 6px;
+    background: var(--bg);
+    clip-path: polygon(0 0, 100% 0, calc(100% - 9px) 50%, 100% 100%, 0 100%, 9px 50%);
+}
+
+/* the stitches */
+.tag .label::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    left: 12px;
+    right: 12px;
+    border-top: 1px dashed var(--muted);
+    border-bottom: 1px dashed var(--muted);
+}
+
+.tag .label img {
+    width: auto;
+    filter: drop-shadow(0 1px 1px rgba(38, 35, 31, 0.5));
+}
+
+/* label */
+.tag-closet {
+    left: 9.17%;
+    --r: -3deg;
+}
+
+.tag-map {
+    left: 30.42%;
+    --r: 2deg;
+}
+
+.tag-calendar {
+    left: 69.58%;
+    --r: -2deg;
+}
+
+.tag-about {
+    left: 90.83%;
+    --r: 3deg;
+}
+
+.tag-closet .label {
+    --bg: var(--ink);
+}
+
+.tag-map .label {
+    --bg: var(--mint);
+}
+
+.tag-calendar .label {
+    --bg: var(--pink);
+}
+
+.tag-about .label {
+    --bg: var(--lilac);
+}
+
+.tag-closet img {
+    height: 52px;
+}
+
+.tag-map img {
+    height: 64px;
+}
+
+.tag-calendar img {
+    height: 46px;
+}
+
+.tag-about img {
+    height: 48px;
+}
+
+/* logo */
+.logo {
+    position: absolute;
+    top: 26px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 330px;
+    z-index: 3;
+}
+
+.logo .stitch {
+    width: 62%;
+    margin: 10px auto 0;
+    border-top: 2px dashed var(--muted);
+}
+
+
+.mini-add {
+    position: absolute;
+    top: 196px;
+    right: 5%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--ink);
+    text-decoration: none;
+    z-index: 2;
+}
+
+.mini-add img {
+    width: 22px;
+}
+
+/*  trim under the header */
+.under-strip {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 40px;
+    background-image: url("/images/deco/line-scallop.webp");
+    background-repeat: repeat-x;
+    background-size: auto 40px;
+}

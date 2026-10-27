@@ -1,0 +1,19 @@
+{% include "partial-nav.njk" %}
+
+<main class="wrap">
+    <h1>Closet</h1>
+
+    <div class="posts">
+        {% for singleMessage in messagesArrayFromServer %}
+        <div class="post">
+            {% if singleMessage.imgSrc %}
+            <img src="{{ singleMessage.imgSrc }}" alt="">
+            {% endif %}
+            <p><b>{{ singleMessage.garment }}</b></p>
+            <p>{{ singleMessage.neighborhood }} · {{ singleMessage.type }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</main>
+
+{% include "partial-footer.njk" %}

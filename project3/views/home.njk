@@ -1,0 +1,125 @@
+{% include "partial-nav.njk" %}
+
+<section class="hero">
+
+    {# left: text #}
+    <div class="hero-text">
+        <p class="eyebrow">A quilt of NYC clothes, mended and passed on</p>
+        <h1>Every garment has a biography.</h1>
+        <p class="lede">Mend it, swap it, pass it on. Each patch is a piece of clothing someone posted. No prices, no
+            ratings. Gifts and swaps only.</p>
+    </div>
+
+    {# right: swatches stacked, add button #}
+    <div class="stack">
+        <img class="cloth cloth-1" src="/images/yarn/pastel.webp">
+        <img class="cloth cloth-2" src="/images/yarn/mohair.webp">
+        <img class="cloth cloth-3" src="/images/fabric/plaid-pink.webp">
+        <img class="deco-btn deco-btn-1" src="/images/buttons/gold-flower.webp">
+        <img class="deco-btn deco-btn-2" src="/images/buttons/pale-blue.webp">
+        <a class="bttn big" href="/form"><img src="/images/buttons/white.webp">add patch</a>
+    </div>
+
+</section>
+
+{# introduction #}
+<section class="block">
+
+    <div class="block-head">
+        <div>
+            <p class="eyebrow">How it works</p>
+            <h2>A biography, one chapter at a time</h2>
+        </div>
+        <p class="note">Post a piece and the city you're in. Each time it changes hands, the next owner adds a chapter.
+        </p>
+    </div>
+
+    <div class="chapters">
+        <div class="chapter">
+            <img class="pin" src="/images/buttons/pink.webp">
+            <p class="num">Chapter 1</p>
+            <h3>Where it came from</h3>
+            <p>Who had it first, and why it ended up in the pile.</p>
+            <p class="example">Bought in Bushwick two winters ago. Worn once.</p>
+        </div>
+        <div class="chapter">
+            <img class="pin" src="/images/buttons/lime.webp">
+            <p class="num">Chapter 2</p>
+            <h3>Where it was mended</h3>
+            <p>What was fixed, altered or remade.</p>
+            <p class="example">Hem taken up 4 cm at mending night, East Village.</p>
+        </div>
+        <div class="chapter">
+            <img class="pin" src="/images/buttons/yellow.webp">
+            <p class="num">Chapter 3</p>
+            <h3>Where it went next</h3>
+            <p>Who it went to, or that it's still waiting.</p>
+            <p class="example">Swapped for a linen shirt in Astoria.</p>
+        </div>
+        <div class="chapter">
+            <img class="pin" src="/images/buttons/star.webp">
+            <p class="num">Chapter 4</p>
+            <h3>How to wear it</h3>
+            <p>A styling tip for the next person.</p>
+            <p class="example">With a chunky knit and loafers.</p>
+        </div>
+    </div>
+
+</section>
+
+<section class="cats">
+
+    <div class="block block-head">
+        <div>
+            <p class="eyebrow">Six threads</p>
+            <h2>Pick a thread</h2>
+        </div>
+        <p class="note">Each button holds up one kind of patch. Click one to sort the quilt below.</p>
+    </div>
+
+    <div class="cat-line"></div>
+
+    <div class="cat-row">
+        {% for category in categoriesFromServer %}
+        <a class="cat {% if category.type == chosenType %}on{% endif %}" href="/?type={{ category.type }}#quilt">
+            <img class="pin" src="{{ category.button }}">
+            <img class="cloth" src="{{ category.cloth }}">
+            <span class="name">{{ category.type }}</span>
+        </a>
+        {% endfor %}
+    </div>
+
+</section>
+{# every patch #}
+<section class="block" id="quilt">
+
+    <div class="block-head">
+        <div>
+            <p class="eyebrow">Every patch</p>
+            <h2>The quilt</h2>
+        </div>
+        <p class="note">
+            Showing: {% if chosenType %}{{ chosenType }} · <a href="/#quilt">show all</a>{% else %}all{% endif %}
+        </p>
+    </div>
+
+    <div class="quilt">
+        {% for patch in patchesFromServer %}
+
+        {# put an empty "your patch here" #}
+        {% if loop.index == 5 %}
+        <a class="slot" href="/form"><img src="/images/buttons/gold-flower.webp">+ your patch here</a>
+        {% endif %}
+
+        <div class="patch">
+            <img src="{{ patch.imgSrc }}">
+            <span class="patch-type">{{ patch.type }}</span>
+            <span class="patch-name">{{ patch.garment }} · {{ patch.neighborhood }}</span>
+        </div>
+
+        {% endfor %}
+    </div>
+
+</section>
+
+{% include "partial-footer.njk" %}

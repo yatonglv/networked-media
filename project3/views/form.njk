@@ -1,0 +1,39 @@
+{% include "partial-nav.njk" %}
+
+<main class="block">
+    <p class="eyebrow">Add a patch</p>
+    <h1>Hang your garment on the line.</h1>
+
+    <form class="patch-form" method="POST" action="/send-message" enctype="multipart/form-data">
+
+        <label>Photo
+            <input type="file" name="theImage" accept="image/*" required>
+        </label>
+
+        <p class="form-label">Type</p>
+        <div class="types">
+            {% for category in categoriesFromServer %}
+            <label class="type">
+                <input type="radio" name="type" value="{{ category.type }}" required>
+                <img src="{{ category.button }}">{{ category.type }}
+            </label>
+            {% endfor %}
+        </div>
+
+        <label>Garment
+            <input type="text" name="garment" placeholder="Black dragon qipao" required>
+        </label>
+
+        <label>Neighborhood
+            <input type="text" name="neighborhood" placeholder="Flushing" required>
+        </label>
+
+        <label>Its story
+            <textarea name="story" placeholder="Where did it come from? What did you fix?"></textarea>
+        </label>
+
+        <button class="bttn" type="submit"><img src="/images/buttons/pink.webp">hang it up</button>
+    </form>
+</main>
+
+{% include "partial-footer.njk" %}

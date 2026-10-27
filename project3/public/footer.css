@@ -1,0 +1,43 @@
+
+.trim-foot {
+    height: 46px;
+    margin-top: 80px;
+    background-image: url("/images/trim/flowers.webp");
+    /* background-repeat: repeat-x; */
+    background-size: auto 46px;
+}
+
+.care {
+    position: relative;
+    width: 520px;
+    margin: 30px 0 0;
+    padding: 26px 28px;
+    background: var(--label);
+}
+
+.care::before {
+    content: "";
+    position: absolute;
+    top: 7px;
+    bottom: 7px;
+    left: 7px;
+    right: 7px;
+    border: 1px dashed var(--muted);
+}
+
+.care h2 {
+    font-family: var(--f-display);
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 3px;
+    margin: 0;
+}
+
+.care ol {
+    list-style: none;
+    padding: 0;
+}
+
+.care small {
+    color: var(--muted);
+}
