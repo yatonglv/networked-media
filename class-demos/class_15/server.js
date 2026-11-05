@@ -30,7 +30,7 @@ nunjucks.configure("views", {
 app.set("view engine", "njk");
 // ***************************** new change
 // store data on our server using an array variable
-let allDate = []
+let allData = []
 // display all my data on my array
 app.get('/view-all',(request,response)=>{
   // optional second param in response.render: data from the server
