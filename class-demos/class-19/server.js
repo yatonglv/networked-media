@@ -46,6 +46,8 @@ let database = new nedb({
     }
     
     )
+
+    
     app.listen(6001,()=>{
         console.log('server is running on http://localhost:6001')
     })
