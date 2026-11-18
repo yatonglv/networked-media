@@ -1,16 +1,28 @@
+
+
 <html>
     <head>
         <title>Today's Lucky Tip</title>
+        <link rel="stylesheet" href="/style.css" />
     </head>
     <body>
-        <h1>Today's Lucky Tip</h1>
-        <form method="POST" action="/add-data">
-            <label>Today you can try:</label>
-            <input type="text" name="good" placeholder="eg.wearing mismatched socks">
-          
-            <label>Today you better not:</label>
-            <input type="text" name="avoid" placeholder="eg. getting your hair cut">
-            <input type="submit" value="send data">
-        </form>
-    </body>
+        <section></section>
+        <main>
+            <nav>
+                <div class="links">
+                    <a href="/">add a tip</a>
+                    <a href="/get-data">see all tips</a>
+                </div>
+            </nav>
+            <h1>Today's Lucky Tip</h1>
+            <form method="POST" action="/add-data">
+                <label>Today you can try:</label>
+                <input type="text" name="good" placeholder="eg. wearing mismatched socks">
+                <label>Today you better not:</label>
+                <input type="text" name="avoid" placeholder="eg. getting your hair cut">
+                <input type="submit" value="send data">
+            </form>
+        </main>
+        <section></section>
+        </body>
 </html>

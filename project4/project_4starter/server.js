@@ -1,5 +1,4 @@
-// this is building off of class-19-demo
-// the only difference is adding njk
+
 const express = require('express');
 const nunjucks = require('nunjucks');
 let nedb = require('@seald-io/nedb');
@@ -15,6 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 nunjucks.configure('views', {
 	autoescape: true,
 	express: app,
+	noCache: true,
 });
 app.set('view engine', 'njk');
 
@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 app.post('/add-data', (req, res) => {
 	let dataToBeAdded = {
 		good: req.body.good,
-		aviod:req.body.avoid,
+		avoid:req.body.avoid,
 		timestamp: Date.now(),
 	};
 
