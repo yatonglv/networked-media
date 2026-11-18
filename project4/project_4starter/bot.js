@@ -18,7 +18,7 @@ async function makeStatus(text) {
 // classmates
 let classmates = ['Caitlyn', 'Elena', 'Anna', 'Jennifer', 'Mike', 'Tommy', 'Lisa', 'Lam', 'Alessandra', 'Wing Huen', 'May', 'Weixuan', 'Anita', 'Kiki','yatong']
 
-let count = 0
+let count = 10
 setInterval(async () => {
     
     count = count + 1
