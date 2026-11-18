@@ -11,7 +11,7 @@ async function makeStatus(text) {
     const status = await masto.v1.statuses.create({
         status: text,
         // TODO: change visability to public when project ready to run
-        visibility: ' public',
+        visibility: 'public',
     });
 }
 
